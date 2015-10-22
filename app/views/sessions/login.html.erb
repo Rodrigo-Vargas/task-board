@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-offset-3 col-md-6">
+    <div class="login-form row">
+      <h2 class="login-title">Acessar</h2>
+      <%= form_tag(:action => 'login_attempt') do %>
+        <div class="form-group">
+          <label>Username or Email:</label>
+          <%= text_field_tag :name_or_email, nil, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <label>Password:</label>
+          <%= password_field_tag :login_password, nil, class: "form-control" %>
+        </div>
+        <%= submit_tag "Acessar", class: "btn btn-primary col-sm-12 btn-login" %>
+      <% end %>
+    </div>
+
+    <div class="login-form-errors">
+      <% flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, class: name %>
+      <% end -%>
+    </div>
+
+  </div>
+</div>
