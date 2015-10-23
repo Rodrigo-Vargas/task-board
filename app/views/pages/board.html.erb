@@ -1,0 +1,25 @@
+<h2>This is your board, add some lists and cards to organize your tasks and projects</h2>
+<div class="row">
+  <div class="col-sm-3 side-nav">
+    <ul>
+      <li><%= link_to "Add List", new_list_path %></li>
+    </ul>
+  </div>
+  <div class="col-sm-9 board">
+    <% @lists.each do |list| %>
+      <div class="list">
+        <h3><%= list.title %></h3>
+        <%= link_to "Delete List", list_path(list),
+                    method: :delete,
+                    data: { confirm: "Deseja excluir:" } %>
+
+        <div class="list-items">
+          <div class="item"><p>Task 1</p></div>
+          <div class="item"><p>Task 2</p></div>
+          <div class="item"><p>Task 3</p></div>
+        </div>
+      </div>
+    <% end %>
+    
+  </div>
+</div>

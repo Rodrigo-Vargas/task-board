@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get    'board'                        => "pages#board", as: :board
 
   resources :users, except: :show
+  resources :lists
 
   get    'signup'                       => "users#new"
   get    'login'                        => "sessions#login", as: :login
