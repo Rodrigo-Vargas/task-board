@@ -2,14 +2,15 @@
 <html>
 <head>
   <title>TaskBoard</title>
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <h2 class="centered-text">Task Board</h2>
+  <div class="content">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

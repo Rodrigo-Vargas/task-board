@@ -1,36 +1,37 @@
-<h2 class="centered-text">Task Board</h2>
-<div class="row">
-  <div class="col-sm-2 side-nav">
-    <ul>
-      <li><%= link_to "Add List", new_list_path %></li>
-    </ul>
-  </div>
-  <div class="col-sm-10 board">
-    <% @lists.each do |list| %>
-      <div class="list">
-        <div class="list-header clearfix">
-          <h3 class="pull-left"><%= list.title %></h3>
-          <%= link_to list_path(list),
-                      method: :delete,
-                      data: { confirm: "Deseja excluir:" }, class: "pull-right" do %>
-            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-          <% end %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2 side-nav">
+      <ul>
+        <li><%= link_to "Add List", new_list_path %></li>
+      </ul>
+    </div>
+    <div class="col-sm-10 board">
+      <% @lists.each do |list| %>
+        <div class="list">
+          <div class="list-header clearfix">
+            <h3 class="pull-left"><%= list.title %></h3>
+            <%= link_to list_path(list),
+                        method: :delete,
+                        data: { confirm: "Deseja excluir:" }, class: "pull-right" do %>
+              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+            <% end %>
+          </div>
+          <div class="list-items">
+            <% list.cards.each do |card| %>
+              <div class="card clearfix">
+                <p class="pull-left"><%= card.title %></p>
+                <%= link_to list_card_path(list, card),
+                  method: :delete,
+                  data: { confirm: "Deseja excluir:" }, class: "pull-right" do %>
+                  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+          <%= link_to "Add card", new_list_card_path(list), class: "btn btn-primary" %>
         </div>
-        <div class="list-items">
-          <% list.cards.each do |card| %>
-            <div class="card clearfix">
-              <p class="pull-left"><%= card.title %></p>
-              <%= link_to list_card_path(list, card),
-                method: :delete,
-                data: { confirm: "Deseja excluir:" }, class: "pull-right" do %>
-                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-        <%= link_to "Add card", new_list_card_path(list), class: "btn btn-primary" %>
-      </div>
-    <% end %>
-    
+      <% end %>
+      
+    </div>
   </div>
 </div>
