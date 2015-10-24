@@ -1,3 +1,26 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Board Styles*/
+
+.list {
+  background-color: #e2e4e6;
+  border-radius: 5px;
+  padding: 10px 5px;
+  width: 200px;
+}
+
+.list-header {
+  line-height: 26px;
+  padding: 0px 10px;
+  margin-bottom: 5px;
+  vertical-align: middle;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 4px 5px;
+}

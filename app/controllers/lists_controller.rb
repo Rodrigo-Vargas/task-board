@@ -36,6 +36,10 @@ class ListsController < ApplicationController
   def destroy
     @list = List.find(params[:id])
 
+    @list.cards.each do |card|
+      card.destroy
+    end
+
     @list.destroy
 
     redirect_to board_path
