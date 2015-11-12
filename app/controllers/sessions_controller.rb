@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   def login
+    if session[:user_id]
+      redirect_to(board_path)
+    end
   end
 
   def login_attempt
@@ -8,7 +11,7 @@ class SessionsController < ApplicationController
     if authorized_user
       session[:user_id] = authorized_user.id
       session[:user_name] = authorized_user.name
-      redirect_to('/')
+      redirect_to(board_path)
     else
       flash[:notice] = "Invalid Username or Password"
       flash[:color]= "invalid"

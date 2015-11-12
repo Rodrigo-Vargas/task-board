@@ -2,13 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* Menu Board Styles */
+#menu-labels ul {
+  list-style: none;
+  padding: 0px;
+}
+
+#menu-labels li {
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#menu-labels li a {
+  color: #fff;
+  display: block;
+  padding: 5px 15px;
+}
+
 /* Board Styles*/
+#board {
+  overflow-x: scroll;
+  white-space: nowrap;
+}
 
 .list {
   background-color: #e2e4e6;
   border-radius: 5px;
+  display: inline-block;
+  margin: 0px 10px 15px 0px;
   padding: 10px 5px;
-  width: 200px;
+  vertical-align: top;
+  width: 400px;
 }
 
 .list-header {
@@ -23,4 +47,10 @@
   border-radius: 5px;
   margin-bottom: 5px;
   padding: 4px 5px;
+}
+
+.card-label {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
 }

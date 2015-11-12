@@ -1,0 +1,10 @@
+<%= form_tag ("/lists/" + @list.id.to_s + "/cards/" + @card.id.to_s + "/add-label") do %>
+  <div class="form-group">
+    <%= label :card, :labels %>
+    <%= collection_check_boxes :card, :labels, @labels, :id, :name %>
+  </div>
+
+  <div>
+    <%= submit_tag "Salvar", class: "btn btn-primary" %>
+  </div>
+<% end %>

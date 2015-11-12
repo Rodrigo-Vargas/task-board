@@ -6,5 +6,6 @@ class PagesController < ApplicationController
 
   def board
     @lists = @current_user.lists
+    @labels = @current_user.labels
   end
 end

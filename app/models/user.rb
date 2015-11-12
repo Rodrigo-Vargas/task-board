@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :lists
+  has_many :cards
+  has_many :labels
 
   attr_accessor :password
     EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i

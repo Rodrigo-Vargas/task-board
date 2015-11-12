@@ -7,10 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h2 class="centered-text">Task Board</h2>
+  <div id="header">
+    <div class="row">
+      <div class="col-xs-10"><h2 class="centered-text"><a href="/">Task Board</a></h2></div>
+      <div id="user-info" class="col-xs-2">Welcome <%= @current_user.name %></div>  
+    </div>
+  </div>
   <div class="content">
     <%= yield %>
   </div>
-
 </body>
 </html>
