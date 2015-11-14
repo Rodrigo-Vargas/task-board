@@ -10,7 +10,12 @@ class ListsController < ApplicationController
   end
 
  def edit
-    @list = List.find(params[:id])
+    @list = @current_user.lists.find_by_id(params[:id])
+
+    if !@list
+      flash[:notice] = "List not found"
+      redirect_to board_path
+    end
   end
 
   def create

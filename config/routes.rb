@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :labels
 
-  get    'signup'                       => "users#new"
+  get    'signup'                       => "users#new", as: :signup
   get    'login'                        => "sessions#login", as: :login
   post   'login-attempt'                => "sessions#login_attempt"
   get    'logout'                       => "sessions#logout", as: :logout
