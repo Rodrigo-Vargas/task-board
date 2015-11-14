@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  layout "site", :only => :login
+
   def login
     if session[:user_id]
       redirect_to(board_path)

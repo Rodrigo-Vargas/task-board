@@ -10,7 +10,7 @@ class ListsController < ApplicationController
   end
 
  def edit
-    #@category = Category.find(params[:id])
+    @list = List.find(params[:id])
   end
 
   def create
@@ -23,15 +23,15 @@ class ListsController < ApplicationController
     end
   end
 
-  #def update
-  #  @category = Category.find(params[:id])
+  def update
+    @list = List.find(params[:id])
 
-#    if @category.update(list_params)
-#      redirect_to category_settings_path
-#    else 
-#      render 'edit'
-#    end
-#  end
+    if @list.update(list_params)
+      redirect_to board_path
+    else 
+      render 'edit'
+    end
+  end
 
   def destroy
     @list = List.find(params[:id])
@@ -47,6 +47,6 @@ class ListsController < ApplicationController
 
   private
     def list_params
-      params.require(:list).permit(:title)
+      params.require(:list).permit(:title, :position)
     end
 end
