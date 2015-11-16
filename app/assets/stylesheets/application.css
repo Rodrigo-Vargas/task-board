@@ -43,52 +43,12 @@ ul.menu {
 
 
 /* Element Column System */
-.erow:before, .erow:after {
-  content: " ";
-  display: table;  
+.row.gutter-10 {
+  margin-right: -5px;
+  margin-left: -5px;
 }
 
-.erow:after {
-  clear: both;
-}
-
-.ecol-xs-1, .ecol-xs-2, .ecol-xs-3, .ecol-xs-4, .ecol-xs-5,
-.ecol-xs-6, .ecol-xs-7, .ecol-xs-8, .ecol-xs-9 {
-  float: left;
-}
-
-.ecol-xs-1 {
-  width: 10%;
-}
-
-.ecol-xs-2 {
-  width: 20%;
-}
-
-.ecol-xs-3 {
-  width: 30%;
-}
-
-.ecol-xs-4 {
-  width: 40%;
-}
-
-.ecol-xs-5 {
-  width: 50%;
-}
-
-.ecol-xs-6 {
-  width: 60%;
-}
-
-.ecol-xs-7 {
-  width: 70%;
-}
-
-.ecol-xs-8 {
-  width: 80%;
-}
-
-.ecol-xs-9 {
-  width: 90%;
-}
+.gutter-10 > [class^="col-"], .gutter-10 > [class^=" col-"] {
+  padding-right: 5px;
+  padding-left: 5px;
+} 
